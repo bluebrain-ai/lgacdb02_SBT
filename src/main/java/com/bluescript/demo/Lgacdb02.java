@@ -54,7 +54,7 @@ import com.bluescript.demo.model.Dfhcommarea;
         @io.swagger.annotations.ApiResponse(code = 400, message = "This is a bad request, please follow the API documentation for the proper request format"),
         @io.swagger.annotations.ApiResponse(code = 401, message = "Due to security constraints, your access request cannot be authorized"),
         @io.swagger.annotations.ApiResponse(code = 500, message = "The server/Application is down. Please contact support team.") })
-        
+
 public class Lgacdb02 {
 
     @Autowired
