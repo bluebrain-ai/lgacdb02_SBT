@@ -27,11 +27,11 @@ public class CustomerSecureEntity implements Serializable {
 
     @Id
     @Column(name = "CUSTOMERNUMBER")
-    private String customerNumber;
+    private int customerNumber;
     @Column(name = "CUSTOMERPASS")
     private String customerpass;
     @Column(name = "STATE_INDICATOR")
     private String stateIndicator;
     @Column(name = "PASS_CHANGES")
-    private String passChanges;
+    private int passChanges;
 }
