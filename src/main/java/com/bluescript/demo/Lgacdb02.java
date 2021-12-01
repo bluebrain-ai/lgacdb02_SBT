@@ -143,8 +143,7 @@ public class Lgacdb02 {
 
         try {
             Mono<ErrorMsg> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                    .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class)
-                    .timeout(Duration.ofMillis(10_000));
+                    .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class);// timeout(Duration.ofMillis(10_000));
             errorMsg = lgstsqResp.block();
         } catch (Exception e) {
             log.error(e);
@@ -154,8 +153,7 @@ public class Lgacdb02 {
                 caData = dfhcommarea.toFixedWidthString();
                 try {
                     Mono<String> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class)
-                            .timeout(Duration.ofMillis(10_000));
+                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class);// timeout(Duration.ofMillis(10_000));
                     caErrorMsg = lgstsqResp.block();
                 } catch (Exception e) {
                     log.error(e);
@@ -167,8 +165,7 @@ public class Lgacdb02 {
                         + dfhcommarea.getD2CustsecrState() + dfhcommarea.getD2CustsecrData().substring(0, 35));
                 try {
                     Mono<String> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class)
-                            .timeout(Duration.ofMillis(10_000));
+                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class);// timeout(Duration.ofMillis(10_000));
                     caErrorMsg = lgstsqResp.block();
                 } catch (Exception e) {
                     log.error(e);
